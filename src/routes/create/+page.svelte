@@ -1,21 +1,20 @@
 <script lang="ts">
-	let boardId = '';
+	let boardName = '';
 	let boardPass = '';
 </script>
 
-<h1 class="h1">Welcome to Retro!</h1>
-<p>Enter your code to get started!</p>
+<h1 class="h1">Create a board!</h1>
 
 <form action="/board" method="POST" class="flex flex-col justify-center gap-4">
 	<div class="flex flex-col gap-2">
 		<label for="board-name" class="label">Board ID</label>
 		<input
 			type="text"
-			id="board-id"
-			name="board-id"
+			id="board-name"
+			name="board-name"
 			class="input p-2"
-			placeholder="Board ID"
-			bind:value={boardId}
+			placeholder="Board Name"
+			bind:value={boardName}
 		/>
 	</div>
 	<div class="flex flex-col gap-2">
@@ -29,12 +28,5 @@
 			bind:value={boardPass}
 		/>
 	</div>
-	<button type="submit" class="btn variant-filled hover:bg-primary-500 transition duration-200"
-		>Enter Board</button
-	>
+	<button type="submit" class="btn variant-filled">Create Board</button>
 </form>
-<p>
-	Don't have a board? <a href="/create" class="underline italic hover:text-primary-500"
-		>Create one here</a
-	>
-</p>

@@ -2,4 +2,8 @@
 	import '../app.postcss';
 </script>
 
-<slot />
+<div class="flex items-center justify-center h-screen">
+	<div class="space-y-5">
+		<slot />
+	</div>
+</div>
