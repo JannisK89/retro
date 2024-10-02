@@ -1,6 +1,6 @@
 <script lang="ts">
-	let boardId = '';
-	let boardPass = '';
+	let boardId = $state('');
+	let boardPass = $state('');
 </script>
 
 <h1 class="h1">Welcome to Retro!</h1>

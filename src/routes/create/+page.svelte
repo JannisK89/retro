@@ -1,6 +1,6 @@
 <script lang="ts">
-	let boardName = '';
-	let boardPass = '';
+	let boardName = $state('');
+	let boardPass = $state('');
 </script>
 
 <h1 class="h1">Create a board!</h1>
