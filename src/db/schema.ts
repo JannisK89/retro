@@ -13,7 +13,8 @@ export const boardRelations = relations(board, ({ many }) => ({
 	comment: many(comment)
 }));
 
-const typeEnum = pgEnum('comment_type', ['well', 'improve', 'action']);
+export const typeEnum = pgEnum('comment_type', ['well', 'improve', 'action']);
+
 export const comment = pgTable('comment', {
 	id: uuid('id').primaryKey().defaultRandom(),
 	boardId: uuid('board_id').references(() => board.id),
@@ -21,6 +22,10 @@ export const comment = pgTable('comment', {
 	type: typeEnum('type').notNull(),
 	createdAt: timestamp('created_at').notNull().defaultNow()
 });
+
+export const commentRelations = relations(comment, ({ one }) => ({
+	board: one(board)
+}));
 
 export const insertBoardSchema = createInsertSchema(board, {
 	name: z.string().min(1).max(100)
