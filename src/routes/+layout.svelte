@@ -12,7 +12,7 @@
 
 	let data = $props();
 	let { session, supabase }: Props = $derived(data);
-	let { children } = data;
+	let { children }: Props = data;
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
