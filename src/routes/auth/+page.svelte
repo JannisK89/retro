@@ -1,12 +1,12 @@
 <form method="POST" action="?/login">
-	<label>
+	<label class="label">
 		Email
-		<input name="email" type="email" />
+		<input class="input" name="email" type="email" />
 	</label>
-	<label>
+	<label class="label">
 		Password
-		<input name="password" type="password" />
+		<input class="input" name="password" type="password" />
 	</label>
-	<button>Login</button>
+	<button class="button-base-styles">Login</button>
 	<button formaction="?/signup">Sign up</button>
 </form>
