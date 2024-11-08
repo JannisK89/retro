@@ -1,5 +1,6 @@
 <h1 class="h1">Welcome to Retro!</h1>
 <p>Log in or create an account to get started!</p>
+
 <form method="POST" action="?/login" class="flex flex-col gap-2 w-full">
 	<label class="label" for="email"> Email </label>
 	<input class="input p-2" name="email" type="email" id="email" placeholder="Email" />

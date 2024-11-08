@@ -1,9 +1,10 @@
 <script lang="ts">
 	let boardId = $state('');
 	let boardPass = $state('');
+	let { data } = $props();
 </script>
 
-<h1 class="h1">Welcome to Retro!</h1>
+<h1 class="h1">Welcome {data.user?.email?.slice(0, 6)}!</h1>
 <p>Enter your code to get started!</p>
 
 <form action="/board" method="POST" class="flex flex-col justify-center gap-4">

@@ -10,9 +10,8 @@
 		supabase: SupabaseClient;
 	}
 
-	let data = $props();
+	let { data, children } = $props();
 	let { session, supabase }: Props = $derived(data);
-	let { children }: Props = data;
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
@@ -25,8 +24,4 @@
 	});
 </script>
 
-<div class="flex items-center justify-center h-screen">
-	<div class="space-y-5">
-		{@render children?.()}
-	</div>
-</div>
+{@render children?.()}
