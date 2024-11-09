@@ -24,4 +24,8 @@
 	});
 </script>
 
-{@render children?.()}
+<main class="flex items-center justify-center h-screen">
+	<div class="space-y-5 flex flex-col justify-center">
+		{@render children?.()}
+	</div>
+</main>

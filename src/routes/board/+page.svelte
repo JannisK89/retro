@@ -1,13 +1,12 @@
 <script lang="ts">
 	let boardId = $state('');
-	let boardPass = $state('');
 	let { data } = $props();
 </script>
 
-<h1 class="h1">Welcome {data.user?.email?.slice(0, 6)}!</h1>
-<p>Enter your code to get started!</p>
+<h2 class="h2">Welcome {data.user?.user_metadata.username}</h2>
+<p>Enter your Board ID to start posting!</p>
 
-<form action="/board" method="POST" class="flex flex-col justify-center gap-4">
+<form action="/board" method="POST" class="flex flex-col justify-center gap-4 w-80 lg:w-96">
 	<div class="flex flex-col gap-2">
 		<label for="board-name" class="label">Board ID</label>
 		<input
@@ -17,17 +16,6 @@
 			class="input p-2"
 			placeholder="Board ID"
 			bind:value={boardId}
-		/>
-	</div>
-	<div class="flex flex-col gap-2">
-		<label for="board-pass" class="label">Password</label>
-		<input
-			type="text"
-			id="board-pass"
-			name="board-pass"
-			class="input p-2"
-			placeholder="Password"
-			bind:value={boardPass}
 		/>
 	</div>
 	<button type="submit" class="btn variant-filled hover:bg-primary-500 transition duration-200"
