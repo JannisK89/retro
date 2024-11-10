@@ -6,7 +6,11 @@
 <h2 class="h2">Welcome {data.user?.user_metadata.username}</h2>
 <p>Enter your Board ID to start posting!</p>
 
-<form action="/board" method="POST" class="flex flex-col justify-center gap-4 w-80 lg:w-96">
+<form
+	action="/board"
+	method="POST"
+	class="flex flex-col justify-center gap-4 w-80 lg:w-96 bg-surface-600"
+>
 	<div class="flex flex-col gap-2">
 		<label for="board-name" class="label">Board ID</label>
 		<input

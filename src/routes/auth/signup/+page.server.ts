@@ -36,7 +36,7 @@ export const actions: Actions = {
 			console.error(error);
 			return fail(500, { message: 'Failed to sign up' });
 		} else {
-			redirect(303, '/board');
+			redirect(303, '/auth?signup=success');
 		}
 	}
 };

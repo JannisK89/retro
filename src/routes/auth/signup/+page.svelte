@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { fade } from 'svelte/transition';
 
 	let { form }: { form: { message: string } } = $props();
 </script>
@@ -41,9 +42,16 @@
 	<div class="flex justify-around gap-4 mt-4">
 		<button class="btn btn-lg variant-filled w-full" formaction="?/signup">Sign up</button>
 	</div>
-	{#if form?.message}
-		{#each form.message.split(';') as message}
-			<p class="max-w-max text-warning-600 text-wrap">{message}</p>
-		{/each}
-	{/if}
+	<p class="pt-2">
+		Already have an account? <a href="/auth" class="underline italic hover:text-primary-500"
+			>Log in here</a
+		>
+	</p>
+	<div class="h-4">
+		{#if form?.message}
+			<p in:fade|global={{ duration: 2000 }} class="max-w-max text-warning-600 text-wrap">
+				{form.message.split(';')[0].replace('Validation error: ', '')}
+			</p>
+		{/if}
+	</div>
 </form>

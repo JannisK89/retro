@@ -25,7 +25,9 @@
 </script>
 
 <main class="flex items-center justify-center h-screen">
-	<div class="space-y-5 flex flex-col justify-center">
+	<div
+		class="space-y-5 flex flex-col justify-center lg:bg-surface-900 px-20 rounded-2xl bg-opacity-50 lg:h-4/5"
+	>
 		{@render children?.()}
 	</div>
 </main>
