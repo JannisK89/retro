@@ -31,3 +31,16 @@ export async function getBoardComments(boardId: string) {
 		return [];
 	}
 }
+
+export async function createBoard(boardName: string, ownerId: string) {
+	try {
+		const data = await db
+			.insert(board)
+			.values({ name: boardName, owner: ownerId })
+			.returning({ id: board.id });
+		return data;
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+}

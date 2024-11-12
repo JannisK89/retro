@@ -6,6 +6,7 @@ import { z } from 'zod';
 export const board = pgTable('board', {
 	id: uuid('id').primaryKey().defaultRandom(),
 	name: text('name').notNull(),
+	owner: uuid('owner').notNull(),
 	createdAt: timestamp('created_at').notNull().defaultNow()
 });
 
@@ -28,7 +29,8 @@ export const commentRelations = relations(comment, ({ one }) => ({
 }));
 
 export const insertBoardSchema = createInsertSchema(board, {
-	name: z.string().min(1).max(100)
+	name: z.string().min(1).max(100).trim(),
+	owner: z.string().uuid()
 }).omit({ createdAt: true });
 export const selectBoardSchema = createSelectSchema(board);
 
