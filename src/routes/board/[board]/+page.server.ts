@@ -1,4 +1,4 @@
-import { getBoard, getBoardComments } from '$lib/db/db';
+import { getBoard, getBoardComments } from '$lib/server/db/db';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }: { params: { board: string } }) {

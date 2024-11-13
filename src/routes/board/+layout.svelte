@@ -13,10 +13,11 @@
 	};
 </script>
 
-<header class="lg:absolute top-4 right-8 flex gap-4 justify-center items-center">
-	<p class="text-lg">
+<header class="lg:absolute top-4 right-8 flex justify-center items-center">
+	<p class="text-lg mr-4">
 		{data.user?.user_metadata.username ? ` ${data.user.user_metadata.username}` : 'Logged In'}
 	</p>
-	<button class="btn variant-ringed rounded" onclick={logout}>Logout</button>
+	<a class="btn variant-ringed rounded" href="/">Home</a>
+	<button class="btn variant-glass rounded" onclick={logout}>Logout</button>
 </header>
 {@render children?.()}

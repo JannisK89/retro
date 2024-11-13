@@ -1,12 +1,12 @@
-<script lang="ts">
-	export let data;
+<script>
+	import Column from './Column.svelte';
 </script>
 
-<div>Id: {data.board.id}</div>
-<div>Name: {data.board.name}</div>
-{#each data.comments as comment}
-	<div class="flex flex-col">
-		<span>Comment: {comment.text}</span>
-		<span>Type: {comment.type}</span>
+<div class="flex flex-col pt-6 rounded">
+	<div class="flex gap-4 p-4 bg-opacity-50">
+		<Column title="Check Up" />
+		<Column title="Went Well" />
+		<Column title="Needs Improvement" />
+		<Column title="Actions" />
 	</div>
-{/each}
+</div>
