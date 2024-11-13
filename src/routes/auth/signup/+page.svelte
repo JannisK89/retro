@@ -29,7 +29,8 @@
 		id="username"
 		placeholder="Username"
 		required
-		min="1"
+		minlength="1"
+		maxlength="20"
 	/>
 	<label class="label" for="password"> Password (Minimum 8 Characters)</label>
 	<input
@@ -39,7 +40,7 @@
 		id="password"
 		placeholder="Password"
 		required
-		min="8"
+		minlength="8"
 	/>
 	<label class="label" for="passwordConfirm"> Confirm Password </label>
 	<input
@@ -49,10 +50,10 @@
 		id="passwordConfirm"
 		placeholder="Confirm Password"
 		required
-		min="8"
+		minlength="8"
 	/>
 	<div class="flex justify-around gap-4 mt-4">
-		<button class="btn btn-lg variant-filled w-full" disabled={sending} formaction="?/signup"
+		<button class="btn btn-lg variant-filled w-full" disabled={sending}
 			>{!sending ? 'Sign Up' : 'Signing you up'}</button
 		>
 	</div>

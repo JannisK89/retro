@@ -5,12 +5,12 @@ import { fromError } from 'zod-validation-error';
 
 const signUpSchema = z.object({
 	email: z.string().email().max(255),
-	username: z.string().min(1).max(255),
+	username: z.string().min(1).max(20),
 	password: z.string().min(8).max(255)
 });
 
 export const actions: Actions = {
-	signup: async ({ request, locals: { supabase } }) => {
+	default: async ({ request, locals: { supabase } }) => {
 		const formData = await request.formData();
 		const email = formData.get('email') as string;
 		const password = formData.get('password') as string;
